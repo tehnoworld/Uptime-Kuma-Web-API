@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export NAME=uptime-kuma-web-api
 export DIR=/app

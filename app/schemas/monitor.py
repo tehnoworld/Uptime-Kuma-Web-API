@@ -9,6 +9,7 @@ class Monitor(BaseModel):
     type: MonitorType
     name: str
     interval: int = 60
+    cron: Optional[str] = None
     retryInterval: int = 60
     resendInterval: int = 0
     maxretries: int = 0
