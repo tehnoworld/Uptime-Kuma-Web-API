@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 APP_MODULE=main:app
 export HOST=${HOST:-0.0.0.0}
