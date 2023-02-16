@@ -1126,7 +1126,10 @@ class UptimeKumaApi(object):
         _convert_monitor_input(data)
         _check_arguments_monitor(data)
         with self.wait_for_event(Event.MONITOR_LIST):
-            return self._call('add', data)
+            return {
+                "data": data,
+                **self._call('add', data)
+            }
 
     @append_docstring(monitor_docstring("edit"))
     def edit_monitor(self, id_: int, **kwargs) -> dict:
