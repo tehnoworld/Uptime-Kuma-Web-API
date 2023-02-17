@@ -1127,7 +1127,7 @@ class UptimeKumaApi(object):
         _check_arguments_monitor(data)
         with self.wait_for_event(Event.MONITOR_LIST):
             return {
-                "data": data,
+                "monitor_data": data,
                 **self._call('add', data)
             }
 
