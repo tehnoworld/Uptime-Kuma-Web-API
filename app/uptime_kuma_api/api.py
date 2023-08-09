@@ -11,7 +11,7 @@ from typing import Any
 
 import requests
 import socketio
-from packaging.version import parse as parse_version
+# from packaging.version import parse as parse_version
 
 from . import (
     AuthMethod,
@@ -736,10 +736,10 @@ class UptimeKumaApi(object):
             "httpBodyEncoding": httpBodyEncoding
         }
 
-        if parse_version(self.version) >= parse_version("1.22"):
-            data.update({
-                "parent": parent
-            })
+#         if parse_version(self.version) >= parse_version("1.22"):
+        data.update({
+            "parent": parent
+        })
 
         if type in [MonitorType.KEYWORD, MonitorType.GRPC_KEYWORD]:
             data.update({
@@ -931,10 +931,10 @@ class UptimeKumaApi(object):
             publicGroupList: list = None
     ) -> tuple[str, dict, str, list]:
         if not theme:
-            if parse_version(self.version) >= parse_version("1.22"):
-                theme = "auto"
-            else:
-                theme = "light"
+#             if parse_version(self.version) >= parse_version("1.22"):
+            theme = "auto"
+#             else:
+#                 theme = "light"
         if theme not in ["auto", "light", "dark"]:
             raise ValueError
         if not domainNameList:
